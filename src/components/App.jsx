@@ -1,16 +1,15 @@
-export const App = () => {
+import { FriendList } from './friendlist/FriendList';
+import { Statistics } from './statistics/Statistics';
+import { Profile } from './profile/Profile';
+import { TransactionHistory } from './transactions/TransactionHistory';
+
+export const App = props => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Profile data={props.datauser}  />
+      <Statistics stats={props.data} title="Upload stats"/>
+      <FriendList data={props.friends} />
+      <TransactionHistory items={props.items} />
+    </>
   );
 };
